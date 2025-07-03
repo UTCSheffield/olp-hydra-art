@@ -8,12 +8,11 @@
     <meta http-equiv="refresh" content="30" >
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- import the latest version of hydra synth-->
     <script src="https://unpkg.com/hydra-synth"></script>
     <script src="https://cdn.statically.io/gl/metagrowing/extra-shaders-for-hydra/main/lib/lib-color.js"></script>
-    
   </head>
   <body>
     <div id="ncid-c50a">
@@ -22,18 +21,17 @@
         width="1275"
         height="641"
         class="bg-black"
-      ></canvas>
-      
+      ></canvas>      
       <pre id="editor-container"></pre>
     </div>
 
     <script>
       // create a new hydra-synth instance
-
       var hydra = new Hydra({
         canvas: document.getElementById("hydra-canvas"),
         detectAudio: false,
       });
+
       function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
