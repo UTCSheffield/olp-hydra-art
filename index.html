@@ -16,10 +16,9 @@
     
   </head>
   <body>
-    <div style="width: 100%; height: 100%" id="ncid-c50a">
+    <div id="ncid-c50a">
       <canvas
         id="hydra-canvas"
-        style="image-rendering: pixelated; width: 100%; height: 100%"
         width="1275"
         height="641"
         class="bg-black"
@@ -39,12 +38,12 @@
         return Math.floor(Math.random() * max);
       }
 
-      // licensed with CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
-// UTC OLP Hex Colour List shader
 // licensed with CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
-// UTC OLP Hex Colour List shader
+// UTC OLP Hex Color List shader
+// licensed with CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// UTC OLP Hex Color List shader
 
-const colours2glsl = (hexs) => { 
+const colors2glsl = (hex_codes) => { 
   let i = 1
   var s = `
   const float d3 = 1.0 / 3.0;
@@ -53,17 +52,17 @@ const colours2glsl = (hexs) => {
   vec3 co;
   `
 
-  var aHexs = hexs.split(",")
+  var hex_code_list = hex_codes.split(",")
 
-  s += "const float colorCount = " +(aHexs.length)+".0;\n" 
+  s += "const float colorCount = " +(hex_code_list.length)+".0;\n" 
   
-  aHexs.forEach((hex)=> {
+  hex_code_list.forEach((hex)=> {
      if (i > 1 ){
       s += "else " 
     }
-    if (i <  aHexs.length ){
+    if (i <  hex_code_list.length ){
       s += "if "
-    s += "(gray < "+ (i/aHexs.length)+")"
+    s += "(gray < "+ (i/hex_code_list.length)+")"
    }
 
     s += "{\n"
@@ -81,38 +80,38 @@ const colours2glsl = (hexs) => {
 
   //console.log(s)
   
-return {
-  name: 'colours',
-  type: 'color',
-  inputs: [
-    {name: 'amount', type: 'float', default: 1.0},
-    {name: 'variation',  type: 'float', default: 0.1},
-  ],
-  glsl: s
-};
+  return {
+    name: 'colours',
+    type: 'color',
+    inputs: [
+      {name: 'amount', type: 'float', default: 1.0},
+      {name: 'variation',  type: 'float', default: 0.1},
+    ],
+    glsl: s
+  };
 }
       
-      let aImages = [
-        "https://th.bing.com/th/id/OIP.2stYdpfk62fcRZIl9Lr3HAHaFW?rs=1&pid=ImgDetMain",
-        "https://th.bing.com/th/id/R.cad1ba09a5482a609f99e2c06a33d4cf?rik=4OiPf5icmMeWOQ&riu=http%3a%2f%2ffarm7.staticflickr.com%2f6041%2f6265559256_2ddef4556b_z.jpg",
-        "https://th.bing.com/th/id/OIP.PtTWJAKDjQS-02KNcxEEJAAAAA?rs=1&pid=ImgDetMain",
-        "https://cdn.glitch.global/c8ba763b-d06e-4354-9fb0-b8e92b9badf5/Python-PNG-Clipart.png?v=1739376510565",
-        "https://upload.wikimedia.org/wikipedia/commons/a/ad/Ada_lovelace_10k_31i.png",
-        //"https://www.electronics-lab.com/wp-content/uploads/2023/06/IBASE_MI997_image.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/0/0e/Analog_Computing_Machine_GPN-2000-000354.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/6/65/%27bombe%27.jpg", 
-        "https://upload.wikimedia.org/wikipedia/commons/2/24/Women_holding_parts_of_the_first_four_Army_computers.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/5/5d/Charles-babbage.intel.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bombe-rebuild.jpg",
-        "https://upload.wikimedia.org/wikipedia/commons/f/f8/Alan_Turing_%281951%29.jpg",
-        
-      ]
-      
-      aImages.sort( () => Math.random()-0.5 );
-      
-      s0.initImage(aImages.pop());
-      s1.initImage(aImages.pop());
-      s2.initImage(aImages.pop());
+let aImages = [
+  "https://th.bing.com/th/id/OIP.2stYdpfk62fcRZIl9Lr3HAHaFW?rs=1&pid=ImgDetMain",
+  "https://th.bing.com/th/id/R.cad1ba09a5482a609f99e2c06a33d4cf?rik=4OiPf5icmMeWOQ&riu=http%3a%2f%2ffarm7.staticflickr.com%2f6041%2f6265559256_2ddef4556b_z.jpg",
+  "https://th.bing.com/th/id/OIP.PtTWJAKDjQS-02KNcxEEJAAAAA?rs=1&pid=ImgDetMain",
+  "https://cdn.glitch.global/c8ba763b-d06e-4354-9fb0-b8e92b9badf5/Python-PNG-Clipart.png?v=1739376510565",
+  "https://upload.wikimedia.org/wikipedia/commons/a/ad/Ada_lovelace_10k_31i.png",
+  //"https://www.electronics-lab.com/wp-content/uploads/2023/06/IBASE_MI997_image.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/0/0e/Analog_Computing_Machine_GPN-2000-000354.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/6/65/%27bombe%27.jpg", 
+  "https://upload.wikimedia.org/wikipedia/commons/2/24/Women_holding_parts_of_the_first_four_Army_computers.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/5/5d/Charles-babbage.intel.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/5/5c/Bombe-rebuild.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/f/f8/Alan_Turing_%281951%29.jpg",
+  
+]
+
+aImages.sort( () => Math.random()-0.5 );
+
+s0.initImage(aImages.pop());
+s1.initImage(aImages.pop());
+s2.initImage(aImages.pop());
 
 function tr1(){
 
@@ -153,9 +152,9 @@ function josh1(){
 }
 
       
-function artclub(){
+function art_club(){
 // Digital Art Club
-  setFunction(colours2glsl("#ee7d00,#009bb4,#e0d3e6,#006F81"))
+  setFunction(colors2glsl("#ee7d00,#009bb4,#e0d3e6,#006F81"))
 
 osc(10,-0.1,0.5).colours(1).kaleid(500).modulate(
   src(s0)
@@ -169,7 +168,7 @@ osc(10,-0.1,0.5).colours(1).kaleid(500).modulate(
 }
 
 function jg1(){
-setFunction(colours2glsl("#ee7d00,#009bb4"))
+setFunction(colors2glsl("#ee7d00,#009bb4"))
 voronoi(5,-0.1,5)
 .add(osc(1,0,1)).kaleid(0.0000601)
 .scale(1,1,2).colours(1).out(o0)
@@ -180,14 +179,14 @@ src(o1).mult(src(s0).modulateRotate(o1,100), -0.5)
       
 function jg2(){        
 osc(4, 0.123, 0.8)
-      .color(Math.sin(time), Math.sin(time), Math.sin(time))
-      .rotate(0.30, 0.1)
-      .pixelate(2, 20)
-      .modulate(noise(2.5), () => 1.5 * Math.sin(0.08 * time))
-      .invert()
-    //.luma()
-      .out(o0);
-      }
+.color(Math.sin(time), Math.sin(time), Math.sin(time))
+.rotate(0.30, 0.1)
+.pixelate(2, 20)
+.modulate(noise(2.5), () => 1.5 * Math.sin(0.08 * time))
+.invert()
+//.luma()
+.out(o0);
+}
       
 function boyce1(){
 // https://hydra.ojack.xyz/?sketch_id=MYdr1KZIVtA64xvE
@@ -207,20 +206,17 @@ shape(4)
 }
      
 function meg1(){
-  gradient([1,2,4])
-  	.layer(src(o0).luma())
-  	.modulate(noise(2)).pixelate(20,20)
+gradient([1,2,4])
+  .layer(src(o0).luma())
+  .modulate(noise(2)).pixelate(20,20)
 	.layer(src(o0).luma())
-	.blend(
-    
-    src(s0)
+	.blend(    
+  src(s0)
   .blend(s1, () => Math.sin((time)) )
   .blend(s2, () => Math.sin((time/(3/2))) )
     .modulate(noise(1)))
 	.scrollX(0, 0.1)
 	.out(o0);
-  
-  
 }
       let codeText = ""
       switch (getRandomInt(6)) {
@@ -229,8 +225,8 @@ function meg1(){
           codeText = tr1.toString()
           break;
         case 1:
-          artclub();
-          codeText = artclub.toString()
+          art_club();
+          codeText = art_club.toString()
           break;
         case 2:
           meg1();
