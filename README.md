@@ -1,37 +1,49 @@
-Welcome to Glitch
-=================
+# olp-hydra-art
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
+https://utcsheffield.github.io/olp-hydra-art/
 
 
-Your Project
-------------
+Welcome to **olp-hydra-art**! This project is maintained by [UTCSheffield](https://github.com/UTCSheffield).
 
-### ← README.md
+## Overview
 
-That's this file, where you can tell people what your cool website does and how you built it.
+`olp-hydra-art` is a repository of our [MakerClub](https://makerclub.netlify.app/) generative art using [Hydra](https://hydra.ojack.xyz/), a livecoding environment for visuals. 
+The uses their code at random, adds random images if they suit the pattern and quarter of the time tries to tranform everything into school colours.
 
-### ← index.html
+## Features
 
-Where you'll write the content of your website. 
+- Hydra scripts for generative visuals
+- Example projects and templates
+- Documentation for getting started
+- Community contributions and collaboration
 
-### ← style.css
+## Getting Started
 
-CSS files add styling rules to your content.
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/UTCSheffield/olp-hydra-art.git
+    cd olp-hydra-art
+    ```
 
-### ← script.js
+2. **Explore the examples:**  
+    Browse the `examples/` directory for ready-to-use Hydra scripts.
 
-If you're feeling fancy you can add interactivity to your site with JavaScript.
+3. **Run Hydra:**  
+    Visit [Hydra online editor](https://hydra.ojack.xyz/) or set up Hydra locally to start livecoding.
 
-### ← assets
+## Contributing
 
-Drag in `assets`, like images or music, to add them to your project
+Contributions are welcome! Please open issues or pull requests to suggest improvements, add new scripts, or report bugs.
 
-Made by [Glitch](https://glitch.com/)
--------------------
+## License
 
-\ ゜o゜)ノ
+This project is licensed under the MIT License.
+
+## Links
+
+- [Hydra Documentation](https://hydra.ojack.xyz/docs/)
+- [UTCSheffield GitHub](https://github.com/UTCSheffield)
+
+---
+
+*Happy coding and creating!*
