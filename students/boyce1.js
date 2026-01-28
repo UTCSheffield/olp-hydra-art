@@ -1,0 +1,10 @@
+shape(4)
+  .mult(osc(67418.353, 0.25, 0.637))
+  .scrollY(0.912, 0.25)
+  .scrollX(2,5)
+  .pixelate([110.361, 25.664, 6.492, 123.721].fast(0.473))
+  .modulateRotate(src(o0)
+    .scale(0.241), 0.16)
+  .diff(src(o0)
+    .rotate([-2, 2].fast(2)))
+  .out(o0);

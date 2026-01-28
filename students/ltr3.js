@@ -1,0 +1,2 @@
+shape(13, 0, 1).rotate(10, 2).scale(2.02, 3, 1.30, 0.316, 0.876).pixelate
+(100, 100).repeatX(5.48, 1).repeatY(5.14, 0.213).scrollX(-10, 0).scrollY(6, 7).kaleid(9.93).luma(0.825, 0.334).thresh(0.349, 0.9939).out()

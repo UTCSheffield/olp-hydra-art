@@ -1,0 +1,11 @@
+gradient([1, 2, 4])
+      .layer(src(o0)
+            .luma())
+      .modulate(noise(20000000000))
+      .pixelate(2, 40)
+      .layer(src(o0)
+            .luma())
+      .blend(src(s0)
+            .modulate(noise(77777)))
+      .scrollX(0, 0.1)
+      .out(o0);
