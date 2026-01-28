@@ -112,7 +112,7 @@
       if (/colors2glsl\s*\(/.test(text)) {
         return text;
       }
-      if (Math.random() < 0.5) {
+      if (Math.random() < 0.25) {
         // Replace the last occurrence of .out( with .colours(1).out(
         const lastOutRegex = /(.out\s*\()/g;
         let match;
