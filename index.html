@@ -112,33 +112,23 @@
       if (/colors2glsl\s*\(/.test(text)) {
         return text;
       }
-      if (Math.random() < 0.25) {
-        let lines = text.split('\n');
-        lines.unshift('setFunction(colors2glsl("#ee7d00,#009bb4,#e0d3e6,#006F81"))');
-        let found = false;
-        for (let i = 1; i < lines.length; i++) {
-          let match = lines[i].match(/^([a-zA-Z0-9_]+\s*\(.*\))/);
-          if (match && !found) {
-            if (!lines[i].includes('.colours(1)')) {
-              let openParens = 0, closeParens = 0, idx = 0;
-              for (let j = 0; j < lines[i].length; j++) {
-                if (lines[i][j] === '(') openParens++;
-                if (lines[i][j] === ')') closeParens++;
-                if (openParens > 0 && openParens === closeParens) {
-                  idx = j;
-                  break;
-                }
-              }
-              if (idx > 0) {
-                lines[i] = lines[i].slice(0, idx + 1) + '.colours(1)' + lines[i].slice(idx + 1);
-              } else {
-                lines[i] += '.colours(1)';
-              }
-            }
-            found = true;
+      if (Math.random() < 0.5) {
+        // Replace the last occurrence of .out( with .colours(1).out(
+        const lastOutRegex = /(.out\s*\()/g;
+        let match;
+        let lastIndex = -1;
+        while ((match = lastOutRegex.exec(text)) !== null) {
+          lastIndex = match.index;
+        }
+        if (lastIndex !== -1) {
+          // Only replace if not already preceded by .colours(1)
+          const before = text.slice(0, lastIndex);
+          const after = text.slice(lastIndex);
+          if (!before.endsWith('.colours(1)')) {
+            // Add setFunction(colors2glsl(...)) at the top
+            return 'setFunction(colors2glsl("#ee7d00,#009bb4,#e0d3e6,#006F81"))\n' + before + '.colours(1)' + after;
           }
         }
-        return lines.join('\n');
       }
       return text;
     }
