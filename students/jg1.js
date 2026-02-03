@@ -1,4 +1,5 @@
-setFunction(colors2glsl("#ee7d00,#009bb4"))
+//setFunction(colors2glsl("#ee7d00,#009bb4"))
+setFunction(colors2glsl("#ee7d00,#009bb4,#e0d3e6,#006F81"))
 voronoi(5,-0.1,5)
   .add(osc(1,0,1)).kaleid(0.0000601)
   .scale(1,1,2).colours(1).out(o0)

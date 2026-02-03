@@ -1,0 +1,8 @@
+osc(5,0.2,1)
+  .modulateScale(osc(40,0,1).kaleid(8))
+  .repeat(2,4)
+  .modulate(o0,0.05)
+  .modulateKaleid(shape(4,0.1,1))
+  .scrollX(2, 2, 2).modulateKaleid(osc(), 1)
+  .scrollY(2, 2, 2)
+  .out(o0)
