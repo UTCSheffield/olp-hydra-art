@@ -1,1 +1,7 @@
-noise(36.2, 0.931).rotate(10, 2).scale(3, 2.42, 0.15, 0.5, 0.5).repeatX(1.56, 0).scrollX(-0.09, 0.21).thresh(0.747, 0.079).out()
+noise(36.2, 0.931)
+    .rotate(10, 2)
+    .scale(3, 2.42, 0.15, 0.5, 0.5)
+    .repeatX(1.56, 0)
+    .scrollX(-0.09, 0.21)
+    .thresh(0.747, 0.079)
+    .out()
